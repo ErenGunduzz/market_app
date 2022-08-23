@@ -101,12 +101,7 @@ class MainScreen:
                         message="Do you want to buy it?")
                     if buy_status == True:
                         stocks[book] -= 1
-            """if selected_item[0] == 0:
-                tkinter.messagebox.showinfo("War and Peace", "War and Peace by Leo Tolstoy: 10£")
-            elif selected_item[0] == 1:
-                self.display_electronics()
-            elif selected_item[0] == 2:
-                self.display_sport_eq()"""
+         
         else:
             tkinter.messagebox.showinfo(
                 message="No item selected.")
@@ -124,19 +119,12 @@ class MainScreen:
             for book in range(len(BOOKS)):
                 self.book_list.insert(book, BOOKS[book])
 
-            """self.get_button = tkinter.Button(
-                new_window, text="Get Item",
-                command=self.openNewWindow(new_window, "Purchase Screen"))
-            self.get_button.pack(padx=50, pady=30)"""
-            #purchase_screen = self.get_item(new_window, self.openNewWindow(new_window, "Purchase Screen"))
-            #self.choose_book()
+
             self.get_item(self.new_window, self.choose_book)
-            #tkinter.messagebox.showinfo()
         else:
             pass
 
     def choose_electro(self):
-        # electro_list'i burada kullanabilmek için display kısmında self.electro list yapmak lazım
         selected_item = self.electro_list.curselection()
         if len(selected_item) > 0:
             if selected_item[0] == 0:
@@ -198,8 +186,7 @@ class MainScreen:
                 self.electro_list.insert(electro, ELECTRONICS[electro])
 
             self.get_item(self.new_window, self.choose_electro)
-            #self.get_item(new_window, self.openNewWindow(new_window, "Purchase Screen"))
-
+           
 
         else:
             pass
@@ -235,13 +222,3 @@ class MainScreen:
 if __name__ == "__main__":
     MainScreen = MainScreen()
 
-
-
-
-# menu entry type a bak
-
-
-# "Gerçekten almak istiyor musunuz" diye son uyarı için ask_question metodunu kullaablirsin.
-# bir kategoriyi seçtikten sonra o kategorinin alt ürünlerini seçmeyi yapman lazım.
-
-# bir kategori seçtikten sonra ana ekranın kapanıp __init__ te olduğu gibi yeni bir ekran açılması lazım
